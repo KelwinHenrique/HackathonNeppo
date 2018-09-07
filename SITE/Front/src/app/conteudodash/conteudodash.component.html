@@ -1,0 +1,93 @@
+<div *ngIf="status == 2">
+  <div class="container-fluid margemesquerda">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 [innerHTML]="pergunta.pergunta">
+            <span class="label label-warning" id="qid" [innerHTML]="pergunta.idPergunta"></span>
+          </h3>
+        </div>
+        <div class="modal-body">
+          <div class="col-xs-3 col-xs-offset-5">
+            <div id="loadbar" style="display: none;">
+              <div class="blockG" id="rotateG_01"></div>
+              <div class="blockG" id="rotateG_02"></div>
+              <div class="blockG" id="rotateG_03"></div>
+              <div class="blockG" id="rotateG_04"></div>
+              <div class="blockG" id="rotateG_05"></div>
+              <div class="blockG" id="rotateG_06"></div>
+              <div class="blockG" id="rotateG_07"></div>
+              <div class="blockG" id="rotateG_08"></div>
+            </div>
+          </div>
+
+          <div class="quiz" id="quiz" data-toggle="buttons">
+            <label class="element-animation1 btn btn-lg btn-primary btn-block" [innerHTML]="pergunta.alternativaA" (click)="submeter('a')">
+              <span class="btn-label">
+                <i class="glyphicon glyphicon-chevron-right"></i>
+              </span>
+              <input type="radio" name="q_answer" value="1">
+            </label>
+            <label class="element-animation2 btn btn-lg btn-primary btn-block" [innerHTML]="pergunta.alternativaB" (click)="submeter('b')">
+              <span class="btn-label">
+                <i class="glyphicon glyphicon-chevron-right"></i>
+              </span>
+              <input type="radio" name="q_answer" value="2">
+            </label>
+            <label class="element-animation3 btn btn-lg btn-primary btn-block" [innerHTML]="pergunta.alternativaC" (click)="submeter('c')">
+              <span class="btn-label">
+                <i class="glyphicon glyphicon-chevron-right"></i>
+              </span>
+              <input type="radio" name="q_answer" value="3">
+            </label>
+          </div>
+        </div>
+        <div class="modal-footer text-muted">
+          <span id="answer"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="status == 3">
+  <div class="alert alert-success teste" role="alert">
+    <h4 class="alert-heading text-center">Resposta Correta</h4>
+    <div class="form-group row">
+      <button type="button" class="btn btn-primary btn-lg btn-block" (click)="irPergunta()">Continuar</button>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="status == 4">
+  <div class="alert alert-danger teste" role="alert">
+    <h4 class="alert-heading text-center">Resposta Errada</h4>
+    <div class="form-group row">
+      <button type="button" class="btn btn-primary btn-lg btn-block" (click)="irPergunta()">Continuar</button>
+    </div>
+  </div>
+</div>
+
+
+<div *ngIf="status == 1">
+  <div class="form-group row teste">
+    <button type="button" class="btn btn-primary btn-lg btn-block" (click)="irQuiz()">Vídeo</button>
+  </div>
+</div>
+
+<div *ngIf="status == 0">
+  <div class="form-group row teste">
+    <button type="button" class="btn btn-primary btn-lg btn-block" (click)="irVideo()">Lição</button>
+  </div>
+</div>
+
+
+
+<div *ngIf="status == 5">
+  <div class="alert alert-success teste" role="alert">
+    <h2 class="alert-heading text-center">Parabens, você finalizou esse módulo!</h2>
+    <div class="form-group row">
+      <button type="button" class="btn btn-primary btn-lg btn-block" >Ir para o próximo módulo</button>
+    </div>
+  </div>
+</div>

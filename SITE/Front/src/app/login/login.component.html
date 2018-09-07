@@ -1,0 +1,38 @@
+<div class="card" style="width: 20rem;">
+  <div class="card-body">
+    <div class="card-title">
+      <h3 class="text-center">Hack Studying</h3>
+    </div>
+    
+    <form method="POST" action="http://192.168.1.4:5000/entrar/">
+      <div class="form-group">
+        <input 
+          type="text" 
+          class="form-control" 
+          placeholder="Login"
+          name="login"
+        >
+      </div>
+      <div class="form-group">
+        <input 
+          type="password"
+          class="form-control" 
+          placeholder="Senha"
+          name="senha"
+        >
+      </div>
+      <button type="submit" class="btn btn-primary btn-sm btn-block">Entrar</button>
+    </form>
+    <hr />
+
+
+  </div>
+</div>
+<br />
+<div class="card" style="width: 20rem;">
+  <div class="card-body">
+    <p class="card-text">
+      Não tem uma conta? <a routerLink="/cadastrar" class="card-link">Cadastre-se</a>
+    </p> 
+  </div>
+</div>
